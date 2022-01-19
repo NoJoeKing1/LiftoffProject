@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec\\ParkRec.csproj": {}
+    "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec\\ParkRec.csproj": {
+    "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec\\ParkRec.csproj",
+        "projectUniqueName": "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec.csproj",
         "projectName": "ParkRec",
-        "projectPath": "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec\\ParkRec.csproj",
+        "projectPath": "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec.csproj",
         "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\ParkRec\\obj\\",
+        "outputPath": "C:\\Users\\Joe\\Documents\\LaunchCode\\Project\\ParkRec\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
@@ -66,9 +64,9 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[3.1.1, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -93,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.415\\RuntimeIdentifierGraph.json"
         }
       }
     }
