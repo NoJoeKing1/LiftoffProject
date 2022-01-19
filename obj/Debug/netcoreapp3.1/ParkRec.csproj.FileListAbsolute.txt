@@ -275,7 +275,6 @@ C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\bin\Debug\netcoreapp3.1\runtim
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\ParkRec.csprojAssemblyReference.cache
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\ParkRec.AssemblyInfoInputs.cache
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\ParkRec.AssemblyInfo.cs
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\ParkRec.csproj.CoreCompileInputs.cache
@@ -344,3 +343,4 @@ C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\ParkRec.csproj.AssemblyReference.cache
