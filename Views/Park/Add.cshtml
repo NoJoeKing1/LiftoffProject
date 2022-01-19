@@ -1,0 +1,20 @@
+﻿
+@model NationalParkRecommendation.ViewModels.AddParkViewModel
+
+<form asp-controller="Park" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location">Location:</label>
+        <input asp-for="Location" />
+        </div>
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <textarea name="@Html.NameFor(m=>m.Description)" rows="4" cols="50"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <input type="submit" value="Add Park" />
+</form>
