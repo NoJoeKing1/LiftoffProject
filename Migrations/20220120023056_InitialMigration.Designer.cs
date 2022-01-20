@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NationalParkRecommendation.Data;
+using ParkRec.Data;
 
 namespace ParkRec.Migrations
 {
     [DbContext(typeof(ParksDbContext))]
-    [Migration("20220119214350_InitialMigration")]
+    [Migration("20220120023056_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -215,7 +215,7 @@ namespace ParkRec.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("NationalParkRecommendation.Models.Park", b =>
+            modelBuilder.Entity("ParkRec.Models.Park", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -233,6 +233,35 @@ namespace ParkRec.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Parks");
+                });
+
+            modelBuilder.Entity("ParkRec.Models.ParkTag", b =>
+                {
+                    b.Property<int>("ParkId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ParkId", "TagId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("ParkTags");
+                });
+
+            modelBuilder.Entity("ParkRec.Models.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -282,6 +311,21 @@ namespace ParkRec.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ParkRec.Models.ParkTag", b =>
+                {
+                    b.HasOne("ParkRec.Models.Park", "Park")
+                        .WithMany()
+                        .HasForeignKey("ParkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ParkRec.Models.Tag", "Tag")
+                        .WithMany()
+                        .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

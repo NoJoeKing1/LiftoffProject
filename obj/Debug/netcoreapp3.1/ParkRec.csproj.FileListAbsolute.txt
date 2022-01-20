@@ -343,4 +343,5 @@ C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\ParkRec.csproj.AssemblyReference.cache
+C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\Views\Tag\Add.cshtml.g.cs
+C:\Users\Joe\Documents\LaunchCode\Project\ParkRec\obj\Debug\netcoreapp3.1\Razor\Views\Tag\Index.cshtml.g.cs
