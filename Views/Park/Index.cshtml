@@ -18,7 +18,7 @@ else
         @foreach(Park park in Model)
         {
             <tr>
-                <td>@park.Name</td>
+                <td><a asp-controller="Park" asp-action="Detail" asp-route-id="@park.Id">@park.Name</a></td>
                 <td>@park.Location</td>
                 <td>@park.Description<td>
             </tr>

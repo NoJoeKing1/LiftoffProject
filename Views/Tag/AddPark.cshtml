@@ -1,6 +1,8 @@
 ﻿
 @model ParkRec.ViewModels.AddParkTagViewModel
 
+<h1>Add Tag to Park: @Model.Park.Name</h1>
+
 <form asp-controller="Tag" asp-action="AddPark" method="post">
     <input type="hidden" value="@Model.Park.Id" name="ParkId" />
     <div class="form-group">

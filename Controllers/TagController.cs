@@ -77,7 +77,7 @@ namespace ParkRec.Controllers
                     context.SaveChanges();
                 }
 
-                return Redirect("Park/Detail/" + parkId);
+                return Redirect("/Park/Detail/" + parkId);
             }
 
             return View(viewModel);
