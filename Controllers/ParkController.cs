@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NationalParkRecommendation.Data;
-using NationalParkRecommendation.Models;
-using NationalParkRecommendation.ViewModels;
+using ParkRec.Data;
+using ParkRec.Models;
+using ParkRec.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 

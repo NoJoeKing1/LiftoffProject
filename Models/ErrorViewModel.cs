@@ -1,6 +1,6 @@
 using System;
 
-namespace Rec_2.Models
+namespace ParkRec.Models
 {
     public class ErrorViewModel
     {

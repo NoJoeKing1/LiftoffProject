@@ -2,14 +2,16 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NationalParkRecommendation.Models;
+using ParkRec.Models;
 
-namespace NationalParkRecommendation.Data
+namespace ParkRec.Data
 {
     public class ParksDbContext : IdentityDbContext<IdentityUser>
     {
 
         /*public DbSet<User> Users { get; set; }*/
         public DbSet<Park> Parks { get; set; }
+        public DbSet<Tag> Tags { get; set; }
         public ParksDbContext(DbContextOptions<ParksDbContext> options)
             : base(options)
         {

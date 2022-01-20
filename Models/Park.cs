@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NationalParkRecommendation.Models
+namespace ParkRec.Models
 {
     public class Park
     {

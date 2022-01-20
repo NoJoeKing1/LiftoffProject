@@ -1,4 +1,4 @@
-﻿@model List<NationalParkRecommendation.Models.Park>
+﻿@model List<ParkRec.Models.Park>
 
 <h1>All Parks</h1>
 
@@ -15,7 +15,7 @@ else
             <th>Location</th>
             <th>Description</th>
         </tr>
-        @foreach(var park in Model)
+        @foreach(Park park in Model)
         {
             <tr>
                 <td>@park.Name</td>

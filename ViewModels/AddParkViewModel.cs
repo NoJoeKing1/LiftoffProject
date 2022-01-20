@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace NationalParkRecommendation.ViewModels
+namespace ParkRec.ViewModels
 {
     public class AddParkViewModel
     {

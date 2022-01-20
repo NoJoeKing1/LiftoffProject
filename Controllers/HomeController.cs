@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Rec_2.Models;
+using ParkRec.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

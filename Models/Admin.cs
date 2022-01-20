@@ -1,4 +1,4 @@
-﻿namespace NationalParkRecommendation.Models
+﻿namespace ParkRec.Models
 {
     public class Admin
     {
