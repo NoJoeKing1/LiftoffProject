@@ -1,0 +1,21 @@
+﻿@model ParkRec.ViewModels.ParkDetailViewModel
+
+<h1>@Model.Name</h1>
+
+<table class="table">
+    <tr>
+        <th>Location</th>
+        <td>@Model.Location</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <th>Tags</th>
+        <td>@Model.TagText</td>
+    </tr>
+
+</table>
+
+<a asp-controller="Tag" asp-action="AddPark" asp-route-id="@Model.ParkId">Add Park</a>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ParkRec.ViewModels
 {
-    public class AddEventTagViewModel
+    public class AddParkTagViewModel
     {
 
         public int ParkId { get; set; }
@@ -14,7 +14,7 @@ namespace ParkRec.ViewModels
 
         public int TagId { get; set; }
 
-        public AddEventTagViewModel(Park thePark, List<Tag> possibleTags)
+        public AddParkTagViewModel(Park thePark, List<Tag> possibleTags)
         {
             Tags = new List<SelectListItem>();
 
@@ -30,7 +30,7 @@ namespace ParkRec.ViewModels
             Park = thePark;
         }
 
-        public AddEventTagViewModel()
+        public AddParkTagViewModel()
         {
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ParkRec.Data;
 using ParkRec.Models;
 using ParkRec.ViewModels;
@@ -46,6 +47,20 @@ namespace NationalParkRecommendation.Controllers
             }
             
             return View(addParkViewModel);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            Park thePark = context.Parks
+                .Single(p=>p.Id == id);
+
+            List<ParkTag> parkTags = context.ParkTags
+                .Where(pt=>pt.ParkId == id)
+                .Include(pt=>pt.Tag)
+                .ToList();
+
+            ParkDetailViewModel viewModel = new ParkDetailViewModel(thePark, parkTags);
+            return View(viewModel);
         }
     }
 }
