@@ -4,19 +4,25 @@
 
 <h1>Search Parks</h1>
 
-    <div class="container body-content">
+<div class="container body-content">
     <form asp-controller="Search" asp-action="Results" method="post">
-        <h5>Search By Name:</h5>
-        <input type="text" name="ParkName" id="ParkName"/>
+        <div>
+            <h5>Search By Name:</h5>
+            <input type="text" name="ParkName" id="ParkName"/>
+        </div>
         <br>
+        <h5>Or</h5>
         <br>
-        <h5>Search By Tags</h5>
-        @*<h6>Eco-system:</h6>*@
-        @foreach(Tag tag in Model.Tags)
-        {
-            <label asp-for="Tags">@tag.Name</label>
-            <input type="checkbox" name="selectedTags" value="@tag.Id" />
-        }
+        <div>
+            <h5>Search By Tags</h5>
+            @*<h6>Eco-system:</h6>*@
+            @foreach(Tag tag in Model.Tags)
+            {
+                <label asp-for="Tags">@tag.Name</label>
+                <input type="checkbox" name="selectedTags" value="@tag.Id" />
+            }
+        </div>
+        <input type="submit" value="Search" />
     </form>
 </div>
   

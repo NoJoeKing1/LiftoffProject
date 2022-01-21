@@ -1,8 +1,10 @@
-﻿@model ParkRec.ViewModels.SearchViewModel
+﻿@model ParkRec.ViewModels.ResultsViewModel
 
 
 <div>
     <h3>Park Results</h3>
+    @if (Model.ParkResults.Count >= 1)
+    {
         <table class="table">
             <tr>
                 <th>
@@ -15,24 +17,19 @@
                     Description
                 </th>
             </tr>
-        @*@if(ViewBag.Count > 1)
-        {*@
-            @foreach(var park in ViewBag.parks)
+            @foreach (Park park in Model.ParkResults)
             {
-            <tr>
-                <td>@park.Name</td>
-                <td>@park.Location</td>
-                <td>@park.Description</td>
-            </tr>
-            }
-        @*}
-        else
-        {
-            <tr>
-                <td>@ViewBag.parks.Name</td>
-                <td>@ViewBag.parks.Location</td>
-                <td>@ViewBag.parks.Description</td>
-            </tr>
-        }*@
-    </table>
+                <tr>
+                    <td>@park.Name</td>
+                    <td>@park.Location</td>
+                    <td>@park.Description</td>
+                </tr>
+            }               
+        </table>
+    }
+    else
+    {
+        <h5>No Results!</h5>
+    }
+    <a asp-controller="Search" asp-action="Index">Search Again</a>
 </div>

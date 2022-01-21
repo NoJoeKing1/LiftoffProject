@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ParkRec.Data;
 using ParkRec.Models;
@@ -16,6 +17,8 @@ namespace NationalParkRecommendation.Controllers
         {
             context = dbContext;
         }
+
+        [AllowAnonymous]
         public IActionResult Index()
         {
             List<Park> parks = context.Parks.ToList();

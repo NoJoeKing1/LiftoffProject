@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ParkRec.Data;
 using ParkRec.Models;
 using ParkRec.ViewModels;
@@ -8,6 +9,7 @@ using System.Linq;
 
 namespace ParkRec.Controllers
 {
+    [Authorize]
     public class SearchController : Controller
     {
         private ParksDbContext context;
@@ -27,8 +29,6 @@ namespace ParkRec.Controllers
         public IActionResult Results(string parkName, string[] selectedTags)
         {
             List<Park> parks = context.Parks.ToList();
-            /*List<Tag> tags = context.Tags.ToList();*/
-            Park resultPark = null;
             List<Park> resultParks = new List<Park>();
 
             if(parkName != null)
@@ -37,8 +37,8 @@ namespace ParkRec.Controllers
                 {
                     if (park.Name == parkName)
                     {
-                        resultPark = park;
-                        ViewBag.parks = resultPark;
+                        Park resultPark = park;
+                        resultParks.Add(resultPark);
 
                     }
                 }
@@ -64,11 +64,10 @@ namespace ParkRec.Controllers
                         }
                     }
                     
-                }
-                ViewBag.parks = resultParks;
+                }                
             }
-
-            return View("Results");
+            ResultsViewModel viewModel = new ResultsViewModel(resultParks);
+            return View("Results", viewModel);
         }
     }
 }
