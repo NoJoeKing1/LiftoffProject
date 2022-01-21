@@ -1,0 +1,38 @@
+﻿@model ParkRec.ViewModels.SearchViewModel
+
+
+<div>
+    <h3>Park Results</h3>
+        <table class="table">
+            <tr>
+                <th>
+                    Park Name
+                </th>
+                <th>
+                    Location
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+        @*@if(ViewBag.Count > 1)
+        {*@
+            @foreach(var park in ViewBag.parks)
+            {
+            <tr>
+                <td>@park.Name</td>
+                <td>@park.Location</td>
+                <td>@park.Description</td>
+            </tr>
+            }
+        @*}
+        else
+        {
+            <tr>
+                <td>@ViewBag.parks.Name</td>
+                <td>@ViewBag.parks.Location</td>
+                <td>@ViewBag.parks.Description</td>
+            </tr>
+        }*@
+    </table>
+</div>
