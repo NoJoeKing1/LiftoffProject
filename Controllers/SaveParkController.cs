@@ -41,7 +41,7 @@ namespace ParkRec.Controllers
             }
             
 
-            return Redirect("Index");
+            return Redirect("/Park/Detail/" + parkId);
         }
     }
 }

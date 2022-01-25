@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ParkRec.Models.Park>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -7,6 +8,27 @@
     <p>Not a user? click <a id="register" asp-area="Identity" asp-page="/Account/Register">here</a> to sign up.</p>
     <a asp-area="" asp-controller="Park" asp-action="Index"><h3>View All Parks</h3></a>
 </div>
-<p>
-    @ViewBag.userid
-</p>
+
+@if(Model != null)
+{
+    <div>
+        <h3>My Saved Parks</h3>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Description</th>
+            </tr>
+            @foreach(Park park in Model)
+            {
+                <tr>
+                    <td><a asp-controller="Park" asp-action="Detail" asp-route-id="@park.Id">@park.Name</a></td>
+                    <td>@park.Location</td>
+                    <td>@park.Description<td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+

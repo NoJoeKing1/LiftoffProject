@@ -9,7 +9,7 @@ using ParkRec.Data;
 namespace ParkRec.Migrations
 {
     [DbContext(typeof(ParksDbContext))]
-    [Migration("20220124235314_InitialMigration")]
+    [Migration("20220125182428_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
