@@ -1,5 +1,7 @@
-﻿using ParkRec.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using ParkRec.Models;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace ParkRec.ViewModels
 {
@@ -9,6 +11,8 @@ namespace ParkRec.ViewModels
         public string Name { get; set; }
         public string Location { get; set; }
         public string Description { get; set; }
+
+        
         public string TagText { get; set; }
 
         public ParkDetailViewModel(Park thePark, List<ParkTag> parkTags)
@@ -30,5 +34,7 @@ namespace ParkRec.ViewModels
                 }
             }
         }
+
+        
     }
 }

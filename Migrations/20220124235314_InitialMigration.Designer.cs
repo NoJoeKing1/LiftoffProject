@@ -9,7 +9,7 @@ using ParkRec.Data;
 namespace ParkRec.Migrations
 {
     [DbContext(typeof(ParksDbContext))]
-    [Migration("20220124175827_InitialMigration")]
+    [Migration("20220124235314_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -264,6 +264,21 @@ namespace ParkRec.Migrations
                     b.ToTable("Tags");
                 });
 
+            modelBuilder.Entity("ParkRec.Models.UserPark", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<int>("ParkId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "ParkId");
+
+                    b.HasIndex("ParkId");
+
+                    b.ToTable("UserParks");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -326,6 +341,15 @@ namespace ParkRec.Migrations
                     b.HasOne("ParkRec.Models.Tag", "Tag")
                         .WithMany()
                         .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ParkRec.Models.UserPark", b =>
+                {
+                    b.HasOne("ParkRec.Models.Park", "Park")
+                        .WithMany()
+                        .HasForeignKey("ParkId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

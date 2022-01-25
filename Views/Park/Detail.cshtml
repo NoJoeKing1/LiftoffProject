@@ -19,4 +19,8 @@
 </table>
 
 <a asp-controller="Tag" asp-action="AddPark" asp-route-id="@Model.ParkId">Add Tags</a>
-<a asp-controller="SavePark" asp-action="Save" asp-route-id="@Model.ParkId">Save Park</a>
+<form asp-controller="SavePark" asp-action="Save" asp-route-id="@Model.ParkId" method="post">
+    <input type="hidden" value="@Model.ParkId" name="ParkId"/>
+    <input type="hidden" value="UserId" name="UserId"/>
+    <input type="submit" value="Save Park" />
+</form>

@@ -182,6 +182,24 @@ namespace ParkRec.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserParks",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(nullable: false),
+                    ParkId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserParks", x => new { x.UserId, x.ParkId });
+                    table.ForeignKey(
+                        name: "FK_UserParks_Parks_ParkId",
+                        column: x => x.ParkId,
+                        principalTable: "Parks",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ParkTags",
                 columns: table => new
                 {
@@ -246,6 +264,11 @@ namespace ParkRec.Migrations
                 name: "IX_ParkTags_TagId",
                 table: "ParkTags",
                 column: "TagId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserParks_ParkId",
+                table: "UserParks",
+                column: "ParkId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -269,16 +292,19 @@ namespace ParkRec.Migrations
                 name: "ParkTags");
 
             migrationBuilder.DropTable(
+                name: "UserParks");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Parks");
+                name: "Tags");
 
             migrationBuilder.DropTable(
-                name: "Tags");
+                name: "Parks");
         }
     }
 }

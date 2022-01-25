@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ParkRec.Data;
 using ParkRec.Models;
 using ParkRec.ViewModels;
@@ -18,6 +20,8 @@ namespace ParkRec.Controllers
         {
             context = dbContext;
         }
+
+        
 
         public IActionResult Index()
         {
@@ -64,10 +68,12 @@ namespace ParkRec.Controllers
                         }
                     }
                     
-                }                
+                }               
             }
             ResultsViewModel viewModel = new ResultsViewModel(resultParks);
             return View("Results", viewModel);
         }
+
+        
     }
 }

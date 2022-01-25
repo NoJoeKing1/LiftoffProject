@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ParkRec.Models;
 using System;
@@ -7,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Rec_2.Controllers
+namespace ParkRec.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,7 +18,7 @@ namespace Rec_2.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
             return View();
