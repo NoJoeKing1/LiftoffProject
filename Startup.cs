@@ -26,6 +26,7 @@ namespace Rec_2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>();
             services.AddControllersWithViews();
             /*services.AddDbContext<ParksDbContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));*/

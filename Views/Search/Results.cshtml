@@ -1,9 +1,9 @@
-﻿@model ParkRec.ViewModels.ResultsViewModel
+﻿@model List<ParkRec.Models.Park>
 
 
 <div>
     <h3>Park Results</h3>
-    @if (Model.ParkResults.Count >= 1)
+    @if (Model.Count >= 1)
     {
         <table class="table">
             <tr>
@@ -17,7 +17,7 @@
                     Description
                 </th>
             </tr>
-            @foreach (Park park in Model.ParkResults)
+            @foreach (Park park in Model)
             {
                 <tr>
                     <td><a asp-controller="Park" asp-action="Detail" asp-route-id="@park.Id">@park.Name</a></td>

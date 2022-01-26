@@ -70,10 +70,11 @@ namespace ParkRec.Controllers
                     
                 }               
             }
-            ResultsViewModel viewModel = new ResultsViewModel(resultParks);
-            return View("Results", viewModel);
+            
+            return View("Results", resultParks);
         }
 
         
     }
 }
+
