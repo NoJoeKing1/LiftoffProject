@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParkRec.Data;
 
 namespace ParkRec.Migrations
 {
     [DbContext(typeof(ParksDbContext))]
-    partial class ParksDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220127154359_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -220,9 +222,6 @@ namespace ParkRec.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("ImageLink")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Location")

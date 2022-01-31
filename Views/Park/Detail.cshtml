@@ -1,7 +1,10 @@
-﻿@model ParkRec.ViewModels.ParkDetailViewModel
-
+﻿@using Microsoft.AspNetCore.Identity
+@model ParkRec.ViewModels.ParkDetailViewModel
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 <h1>@Model.Name</h1>
 
+<img src="@Model.ImageLink" width="600" height="400" />
 <table class="table">
     <tr>
         <th>Location</th>
@@ -19,8 +22,10 @@
 </table>
 
 <a asp-controller="Tag" asp-action="AddPark" asp-route-id="@Model.ParkId">Add Tags</a>
-<form asp-controller="SavePark" asp-action="Save" asp-route-id="@Model.ParkId" method="post">
-    <input type="hidden" value="@Model.ParkId" name="ParkId"/>
-    <input type="hidden" value="UserId" name="UserId"/>
-    <input type="submit" value="Save Park" />
-</form>
+@if (SignInManager.IsSignedIn(User)) {
+    <form asp-controller="SavePark" asp-action="Save" asp-route-id="@Model.ParkId" method="post">
+        <input type="hidden" value="@Model.ParkId" name="ParkId"/>
+        <input type="hidden" value="UserId" name="UserId"/>
+        <input type="submit" value="Save Park" />
+    </form>
+}

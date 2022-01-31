@@ -2,7 +2,19 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<style>
+body {
+  background-image: url('https://www.nawpic.com/media/2020/mountain-nawpic-5.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
 
+td {
+    text-shadow: 1px 1px #FFFFFF
+}
+</style>
+<body>
 <div class="text-center">
     <h1 class="display-4">Find a National Park that's perfect for you!</h1>
     <p>Not a user? click <a id="register" asp-area="Identity" asp-page="/Account/Register">here</a> to sign up.</p>
@@ -13,7 +25,13 @@
 {
     <div>
         <h3>My Saved Parks</h3>
-        <table class="table">
+        @if(Model.Count == 0)
+        {
+            <p>No Saved Parks Yet!</p>
+        }
+        else
+        {
+            <table class="table">
             <tr>
                 <th>Name</th>
                 <th>Location</th>
@@ -28,7 +46,11 @@
                 </tr>
             }
         </table>
+        <a asp-area="" asp-controller="SavePark" asp-action="Delete">Delete park</a>
+        }
+        
     </div>
 }
+</body>
 
 

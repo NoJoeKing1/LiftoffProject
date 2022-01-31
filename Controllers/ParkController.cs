@@ -40,7 +40,8 @@ namespace NationalParkRecommendation.Controllers
                 {
                     Name = addParkViewModel.Name,
                     Location = addParkViewModel.Location,
-                    Description = addParkViewModel.Description
+                    Description = addParkViewModel.Description,
+                    ImageLink = addParkViewModel.ImageLink
                 };
 
                 context.Parks.Add(newPark);

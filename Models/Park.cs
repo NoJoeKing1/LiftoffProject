@@ -9,13 +9,15 @@ namespace ParkRec.Models
         public string Name { get; set; }
         public string Location { get; set; }    
         public string Description { get; set; }
+        public string ImageLink { get; set; }
         public int Id { get; set; }
 
-        public Park(string name, string location, string description)
+        public Park(string name, string location, string description, string imageLink)
         {
             Name = name;
             Location = location;
             Description = description;
+            ImageLink = imageLink;
         }
 
         public Park()

@@ -43,5 +43,42 @@ namespace ParkRec.Controllers
 
             return Redirect("/Park/Detail/" + parkId);
         }
+
+        public IActionResult Delete()
+        {
+            List<Park> deleteList = new List<Park>();
+            string userId = _UserManager.GetUserId(HttpContext.User);
+            List<Park> parks = context.Parks.ToList();
+            List<UserPark> savedParks = context.UserParks
+                .Where(up => up.UserId == userId)
+                .ToList();
+            foreach(Park park in parks)
+            {
+                foreach(UserPark savedPark in savedParks)
+                {
+                    if (park.Id == savedPark.ParkId)
+                    {
+                        deleteList.Add(park);
+                    }
+                }
+            }
+            return View(deleteList);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int[] parkIds)
+        {
+            string userId = _UserManager.GetUserId(HttpContext.User);
+            List<UserPark> savedUserParks = context.UserParks
+                .Where(up => up.UserId == userId)
+                .ToList();
+            foreach(int parkId in parkIds)
+            {
+                UserPark theUserPark = savedUserParks.Find(p=>p.ParkId == parkId);
+                context.UserParks.Remove(theUserPark);
+            }
+            context.SaveChanges();
+            return Redirect("/Home/Index");
+        }
     }
 }

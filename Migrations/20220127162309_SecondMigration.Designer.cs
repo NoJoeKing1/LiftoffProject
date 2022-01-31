@@ -9,8 +9,8 @@ using ParkRec.Data;
 namespace ParkRec.Migrations
 {
     [DbContext(typeof(ParksDbContext))]
-    [Migration("20220125182428_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20220127162309_SecondMigration")]
+    partial class SecondMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -222,6 +222,9 @@ namespace ParkRec.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("ImageLink")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Location")

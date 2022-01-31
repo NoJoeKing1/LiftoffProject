@@ -1,0 +1,18 @@
+﻿@model List<ParkRec.Models.Park>
+
+<h1>Delete Parks</h1>
+
+<form method="post">
+    @foreach (Park park in Model)
+    {
+        <div class="form-group">
+            <label>
+                <span>@park.Name</span>
+                <input type="checkbox" name="parkIds" value="@park.Id" class="form-control">
+            </label>
+        </div>
+    }
+
+    <input type="submit" value="Delete Selected Parks" class="btn btn-danger">
+
+</form>

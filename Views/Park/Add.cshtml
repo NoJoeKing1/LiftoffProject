@@ -16,5 +16,9 @@
         <textarea name="@Html.NameFor(m=>m.Description)" rows="4" cols="50"></textarea>
         <span asp-validation-for="Description"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="ImageLink">Image Link:</label>
+        <input asp-for="ImageLink" />
+        </div>
     <input type="submit" value="Add Park" />
 </form>

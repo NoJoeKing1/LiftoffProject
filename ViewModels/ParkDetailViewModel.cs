@@ -11,6 +11,7 @@ namespace ParkRec.ViewModels
         public string Name { get; set; }
         public string Location { get; set; }
         public string Description { get; set; }
+        public string ImageLink { get; set; }
 
         
         public string TagText { get; set; }
@@ -20,7 +21,8 @@ namespace ParkRec.ViewModels
             ParkId = thePark.Id;
             Name = thePark.Name;
             Location = thePark.Location;
-            Description = thePark.Description;            
+            Description = thePark.Description;
+            ImageLink = thePark.ImageLink;
 
             TagText = "";
 
